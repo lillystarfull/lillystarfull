@@ -124,10 +124,34 @@ Herramientas, DevOps & Entornos
 * **Especialización y Capacitación en Inteligencia Artificial (Estud-IA / Google One AI)** (2025 \- 2026\)  
 * **Desarrollo Web Full-Stack y Arquitectura Cloud** — *Formación Profesional Autónoma / Certificaciones Técnicas*  
 * **Proficiencia en Lengua Inglesa y Comunicación Profesional** — *Super Duolingo / Programas de Inmersión*  
-  📊 Estadísticas de GitHub
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=lillystarfull&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&locale=es" alt="Estadísticas de GitHub" height="180"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lillystarful&layout=compact&theme=tokyonight&hide_border=true&locale=es" alt="Lenguajes más utilizados" height="180"/>
+
+
+## 📊 Estadísticas de GitHub
+
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=lillystarfull&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&locale=es"
+    alt="Estadísticas de GitHub"
+    height="180"
+  />
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=lillystarfull&layout=compact&theme=tokyonight&hide_border=true&locale=es"
+    alt="Lenguajes de programación más utilizados"
+    height="180"
+  />
 </p>
-<p align="center"> <img src="https://github-readme-streak-stats.herokuapp.com/?user=lillystarful&theme=tokyonight&hide_border=true&locale=es" alt="Racha de contribuciones de GitHub"/> </p>
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=lillystarful&style=for-the-badge&color=blueviolet" alt="Visitas al perfil"/> </p>
+
+<p align="center">
+  <img
+    src="https://github-readme-streak-stats.herokuapp.com/?user=lillystarfull&theme=tokyonight&hide_border=true&locale=es"
+    alt="Racha de contribuciones de GitHub"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://komarev.com/ghpvc/?username=lillystarfull&style=for-the-badge&color=blueviolet"
+    alt="Visitas al perfil de GitHub"
+  />
+</p>
 
