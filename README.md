@@ -2,7 +2,7 @@
 <!-- BANNER PRINCIPAL -->
 
 <div align="center">
-  <img src="assets/banner_linux_animado.gif"
+  <img src="assets/banner.png"
        alt="Banner animado de Linux, Ubuntu, Raspberry Pi, Debian y openSUSE"
        width="100%">
 </div>
