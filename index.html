@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilliana Uribe González - Hoja de Vida Web</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Devicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Google Fonts (Inter & Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-color: #06b6d4;
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-muted-custom: #94a3b8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: #f8fafc;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar Flotante Glassmorphism */
+    .navbar-custom {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    /* Tarjetas Glassmorphism */
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
+    }
+
+    /* Avatar & Hero Section */
+    .hero-section {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+
+    .profile-img-container {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #10b981;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3px solid #0f172a;
+    }
+
+    /* Badging & Chips */
+    .badge-tech {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Barra de Progreso */
+    .progress-custom {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 10px;
+      transition: width 1.2s ease-in-out;
+    }
+
+    /* Timeline de Experiencia */
+    .timeline {
+      position: relative;
+      padding-left: 25px;
+      border-left: 2px solid var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    /* Botones de Filtro */
+    .btn-filter {
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 6px 16px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-filter.active, .btn-filter:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+      border-color: var(--primary-color);
+    }
+
+    /* Ocultar elementos en impresión */
+    @media print {
+      .no-print, .navbar, #btn-download {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .glass-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR DE NAVEGACIÓN -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom no-print">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="#">
+        <i class="fa-solid me-2 text-primary"></i>Lilliana Uribe
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="btn btn-primary btn-sm ms-lg-3 rounded-pill px-3" onclick="window.print()" id="btn-download">
+          <i class="fa-solid fa-download me-1"></i> Exportar PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- HERO SECTION / PRESENTACIÓN -->
+    <section class="hero-section text-center" id="sobre-mi">
+      <div class="profile-img-container mb-4">
+        <!-- Marcador de posición de imagen de perfil -->
+        <img src="https://ui-avatars.com/api/?name=Lilliana+Uribe&background=6366f1&color=fff&size=200" alt="Lilliana Uribe González" class="profile-img">
+        <span class="status-badge" title="Disponible para proyectos"></span>
+      </div>
+      <h1 class="display-5 fw-extrabold text-white mb-2">Lilliana Uribe González</h1>
+      <p class="lead text-info fw-semibold mb-3">Ingeniera de Sistemas & Desarrolladora Full Stack</p>
+      <p class="text-secondary max-w-2xl mx-auto mb-4 px-3" style="max-width: 700px;">
+        Especialista en arquitecturas web escalables, desarrollo modular (TDD, SDD, ODD) e integración de Inteligencia Artificial y automatización.
+      </p>
+
+      <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+        <a href="https://linkedin.com/in/lillianauribe" target="_blank" class="btn btn-outline-light rounded-circle p-2 px-3"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/LillianaU" target="_blank" class="btn btn-outline-light rounded-circle p-2 px-3"><i class="fa-brands fa-github"></i></a>
+        <a href="https://youtube.com/@LillianaUribeG" target="_blank" class="btn btn-outline-light rounded-circle p-2 px-3"><i class="fa-brands fa-youtube"></i></a>
+        <a href="mailto:lilliana.uribe@email.com" class="btn btn-outline-light rounded-circle p-2 px-3"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </section>
+
+    <!-- RESUMEN EJECUTIVO -->
+    <section class="mb-5">
+      <div class="glass-card p-4 p-md-5">
+        <h3 class="h4 text-primary mb-3"><i class="fa-solid fa-user-astronaut me-2"></i>Perfil Profesional</h3>
+        <p class="lh-lg mb-0 text-light">
+          Ingeniera de Sistemas, Desarrolladora Full Stack y Consultora Tecnológica certificada en Scrum. Cuento con amplia trayectoria en el diseño de aplicaciones web distribuidas, desarrollo modular de software y gestión avanzada de bases de datos relacionales y no relacionales. Especializada en el ecosistema Full Stack (Python, PHP, JavaScript, TypeScript, Node.js, React) y en la integración de Inteligencia Artificial (n8n, ComfyUI, Ollama).
+        </p>
+      </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS CON BARRAS DE NIVEL -->
+    <section class="mb-5" id="habilidades">
+      <h2 class="h3 mb-4 text-white"><i class="fa-solid fa-code me-2 text-primary"></i>Habilidades Técnicas</h2>
+
+      <div class="d-flex gap-2 mb-4 flex-wrap no-print">
+        <button class="btn btn-filter active" onclick="filterSkills('all')">Todas</button>
+        <button class="btn btn-filter" onclick="filterSkills('frontend')">Frontend</button>
+        <button class="btn btn-filter" onclick="filterSkills('backend')">Backend</button>
+        <button class="btn btn-filter" onclick="filterSkills('database')">Bases de Datos</button>
+        <button class="btn btn-filter" onclick="filterSkills('ai')">DevOps & IA</button>
+      </div>
+
+      <div class="row g-4" id="skills-container">
+        <!-- Skill 1 -->
+        <div class="col-md-6 skill-card" data-category="backend">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="devicon-python-plain colored me-2"></i>Python (Django / FastAPI)</span>
+              <span class="text-info fw-bold">95%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="col-md-6 skill-card" data-category="frontend">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="devicon-javascript-plain colored me-2"></i>JavaScript / TypeScript</span>
+              <span class="text-info fw-bold">90%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="col-md-6 skill-card" data-category="frontend">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="devicon-react-original colored me-2"></i>React & Next.js</span>
+              <span class="text-info fw-bold">88%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="col-md-6 skill-card" data-category="backend">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="devicon-nodejs-plain colored me-2"></i>Node.js & Express</span>
+              <span class="text-info fw-bold">85%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="col-md-6 skill-card" data-category="database">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="devicon-postgresql-plain colored me-2"></i>PostgreSQL & MySQL</span>
+              <span class="text-info fw-bold">92%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="col-md-6 skill-card" data-category="ai">
+          <div class="glass-card p-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold"><i class="fa-solid fa-robot text-warning me-2"></i>Agentes IA & n8n / Ollama</span>
+              <span class="text-info fw-bold">85%</span>
+            </div>
+            <div class="progress-custom">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <section class="mb-5" id="experiencia">
+      <h2 class="h3 mb-4 text-white"><i class="fa-solid fa-briefcase me-2 text-primary"></i>Experiencia Laboral</h2>
+      
+      <div class="timeline ps-3">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="glass-card p-4">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+              <h3 class="h5 fw-bold mb-0 text-white">Desarrolladora Full Stack & Consultora de Software</h3>
+              <span class="badge bg-primary rounded-pill">Ene 2024 – Presente</span>
+            </div>
+            <p class="text-info small mb-3">Freelance / Proyectos Independientes | Medellín, Colombia</p>
+            <ul class="text-secondary mb-0 small lh-lg">
+              <li>Diseño de arquitecturas modulares web utilizando Python (Django, FastAPI), Node.js, PHP y React, optimizando la entrega en un 30%.</li>
+              <li>Integración de agentes autónomos de IA y automatizaciones con n8n, Ollama y ComfyUI para procesos operativos.</li>
+              <li>Aplicación de metodologías TDD, SDD y ODD garantizando una cobertura de pruebas superior al 85%.</li>
+              <li>Gestión de bases de datos relacionales y NoSQL (PostgreSQL, MongoDB) optimizando rendimiento de consultas en 35%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="glass-card p-4">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+              <h3 class="h5 fw-bold mb-0 text-white">Consultora Técnica & Mentora en Desarrollo</h3>
+              <span class="badge bg-secondary rounded-pill">Jun 2022 – Dic 2023</span>
+            </div>
+            <p class="text-info small mb-3">Sector Educativo y Tecnológico | Medellín, Colombia</p>
+            <ul class="text-secondary mb-0 small lh-lg">
+              <li>Diseño de currículos técnicos y capacitación de más de 200 profesionales en tecnologías Full Stack.</li>
+              <li>Coordinación de equipos ágiles bajo la metodología Scrum para la entrega continua de proyectos.</li>
+              <li>Creación de contenido educativo técnico en GitHub y YouTube alcanzando a miles de estudiantes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section class="mb-5" id="proyectos">
+      <h2 class="h3 mb-4 text-white"><i class="fa-solid fa-diagram-project me-2 text-primary"></i>Proyectos Destacados</h2>
+
+      <div class="row g-4">
+        <!-- Proyecto 1 -->
+        <div class="col-md-4">
+          <div class="glass-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge bg-success">Web App</span>
+                <i class="fa-solid fa-utensils text-muted"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">ZYAFOOD</h3>
+              <p class="text-secondary small mb-3">Plataforma de gestión, control y redistribución eficiente de excedentes alimentarios.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="badge-tech">Django</span>
+                <span class="badge-tech">React</span>
+                <span class="badge-tech">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/LillianaU/ZYAFOOD" target="_blank" class="btn btn-sm btn-outline-light w-100"><i class="fa-brands fa-github me-1"></i> Código</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="col-md-4">
+          <div class="glass-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge bg-info">E-Commerce</span>
+                <i class="fa-solid fa-bag-shopping text-muted"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">E-Commerce Moda</h3>
+              <p class="text-secondary small mb-3">Plataforma e-commerce a medida desarrollada para marcas locales de ropa femenina en Medellín.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="badge-tech">Next.js</span>
+                <span class="badge-tech">Node.js</span>
+                <span class="badge-tech">MongoDB</span>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/LillianaU/e-commerce-moda" target="_blank" class="btn btn-sm btn-outline-light w-100"><i class="fa-brands fa-github me-1"></i> Código</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="col-md-4">
+          <div class="glass-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge bg-warning text-dark">Sistemas CRM</span>
+                <i class="fa-solid fa-chart-line text-muted"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Sistema CRM Django</h3>
+              <p class="text-secondary small mb-3">Sistema modular para la gestión de clientes con paneles de control y reportes dinámicos.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">Django</span>
+                <span class="badge-tech">MySQL</span>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/LillianaU/dcrm" target="_blank" class="btn btn-sm btn-outline-light w-100"><i class="fa-brands fa-github me-1"></i> Código</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN Y CERTIFICACIONES -->
+    <section class="mb-5">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h3 class="h5 text-primary mb-3"><i class="fa-solid fa-graduation-cap me-2"></i>Educación</h3>
+            <div class="mb-3">
+              <h4 class="h6 fw-bold text-white mb-1">Grado en Ingeniería de Sistemas</h4>
+              <p class="text-muted small mb-0">Medellín, Colombia</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h3 class="h5 text-primary mb-3"><i class="fa-solid fa-certificate me-2"></i>Certificaciones e Idiomas</h3>
+            <ul class="list-unstyled text-secondary small mb-0 lh-lg">
+              <li><i class="fa-solid fa-award text-warning me-2"></i><strong>Scrum Master / Developer:</strong> CertiProf / Scrum Alliance</li>
+              <li><i class="fa-solid fa-language text-info me-2"></i><strong>Español:</strong> Nativo</li>
+              <li><i class="fa-solid fa-language text-info me-2"></i><strong>Inglés:</strong> Nivel B2 (Intermedio Avanzado)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO Y FOOTER -->
+    <footer class="text-center py-4 text-muted border-top border-secondary no-print" id="contacto">
+      <p class="mb-1 small">Diseñado para Lilliana Uribe González — Medellín, Colombia</p>
+      <p class="small">© 2026 Todos los derechos reservados.</p>
+    </footer>
+
+  </main>
+
+  <!-- BOOTSTRAP 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JAVASCRIPT INTERACTIVO -->
+  <script>
+    // Configuración de datos fácilmente modificables
+    const USER_DATA = {
+      name: "Lilliana Uribe González",
+      title: "Ingeniera de Sistemas & Desarrolladora Full Stack",
+      email: "lilliana.uribe@email.com",
+      location: "Medellín, Colombia"
+    };
+
+    // Función de filtrado interactivo de Habilidades
+    function filterSkills(category) {
+      const cards = document.querySelectorAll('.skill-card');
+      const buttons = document.querySelectorAll('.btn-filter');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Animación suave de aparición al hacer scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log(`Cargada hoja de vida de ${USER_DATA.name}`);
+    });
+  </script>
+</body>
+</html>
